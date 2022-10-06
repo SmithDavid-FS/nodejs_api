@@ -3,7 +3,8 @@ const todosRouter = express.Router();
 const {todoService, todoServicebyId} = require("../services/todoService");
 
 todosRouter.get("/", (req, res, next) => {
-    todoService().then(result => {
+    todoService()
+    .then(result => {
         res.status(200).json(result.data);
     }).catch(err => {
         res.status(500).json({
@@ -17,7 +18,7 @@ todosRouter.get("/", (req, res, next) => {
 
 todosRouter.get('/:id', (req, res, next) => {
     todoServicebyId(req.params.id)
-    .then(result => {
+    .then((result) => {
         res.status(200).json(result.data);
     })
     .catch(err => {

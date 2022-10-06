@@ -8,7 +8,7 @@ app.get("/", (req, res, next) => {
 });
 
 //router middleware
-app.use("/todos", todosRouter)
+app.use("/todos", todosRouter);
 // add middleware to handle errors and add url paths
 app.use((req, res, next) => {
     const error = new Error("NOT FOUND!!");
